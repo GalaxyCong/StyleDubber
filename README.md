@@ -1,5 +1,6 @@
 # StyleDubber
 
+<img width="918" alt="image" src="https://github.com/user-attachments/assets/5eb606c4-2f1b-46c9-ba05-ccf2851bd388">
 
 
 ## 📣 News
