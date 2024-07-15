@@ -45,6 +45,13 @@ pip install -r requirements.txt
 
 ## 🔥 Train Your Own Model 
 
+```bash
+python 
+```
+
+```bash
+python 
+```
 
 ## ⭕ Inference 
 
