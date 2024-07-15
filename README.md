@@ -45,16 +45,36 @@ pip install -r requirements.txt
 
 ## 🔥 Train Your Own Model 
 
+You need repalce tha path in ```preprocess_config``` (see "./ModelConfig_V2C/model_config/MovieAnimation/config_all.txt") to you own path. 
+Training V2C-Animation dataset (153 cartoon speakers), please run: 
 ```bash
-python 
+python train_StyleDubber_V2C.py
 ```
 
+
+You need repalce tha path in ```preprocess_config``` (see "./ModelConfig_GRID/model_config/GRID/config_all.txt") to you own path. 
+Training GRID dataset (33 real-world speakers), please run:  
 ```bash
-python 
+python train_StyleDubber_GRID.py
 ```
 
 ## ⭕ Inference 
 
+
+<img width="1462" alt="image" src="https://github.com/user-attachments/assets/b40e24ba-23c7-4c67-977f-a489106d48fb">
+
+
+```bash
+python 0_evaluate_V2C_Setting1.py --restore_step 47000
+```
+
+```bash
+python 0_evaluate_V2C_Setting2.py --restore_step 47000
+```
+
+```bash
+python 0_evaluate_V2C_Setting3.py --restore_step 47000
+```
 
 ## ✏️ Citing
 
