@@ -78,6 +78,15 @@ python 0_evaluate_V2C_Setting3.py --restore_step 47000
 
 ## ✏️ Citing
 
+If you find our work useful, please consider citing:
+```BibTeX
+@article{cong2024styledubber,
+  title={StyleDubber: Towards Multi-Scale Style Learning for Movie Dubbing},
+  author={Cong, Gaoxiang and Qi, Yuankai and Li, Liang and Beheshti, Amin and Zhang, Zhedong and Hengel, Anton van den and Yang, Ming-Hsuan and Yan, Chenggang and Huang, Qingming},
+  journal={arXiv preprint arXiv:2402.12636},
+  year={2024}
+}
+```
 
 ## 🙏 Acknowledgments
 
