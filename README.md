@@ -27,6 +27,9 @@ This package contains the accompanying code for the following paper:
 
 ## 💡 Checkpoints
 
+We provide the pre-trained checkpoints trained on GRID and V2C-Animation datasets as follows, respectively:
+
+
 - GRID: https://pan.baidu.com/s/1Mj3MN4TuAEc7baHYNqwbYQ (y8kb)
 
 - V2C-Animation dataset (chenqi-Denoise2): https://pan.baidu.com/s/1hZBUszTaxCTNuHM82ljYWg (n8p5)
