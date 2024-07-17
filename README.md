@@ -90,3 +90,4 @@ If you find our work useful, please consider citing:
 
 ## 🙏 Acknowledgments
 
+We would like to thank the authors of previous related projects for generously sharing their code and insights: [CDFSE_FastSpeech2](https://github.com/Labmem-Zhouyx/CDFSE_FastSpeech2), [Multimodal Transformer](https://github.com/yaohungt/Multimodal-Transformer), [SMA](https://github.com/keonlee9420/Stepwise_Monotonic_Multihead_Attention), [Meta-StyleSpeech](https://github.com/KevinMIN95/StyleSpeech), and [FastSpeech2](https://github.com/ming024/FastSpeech2).
