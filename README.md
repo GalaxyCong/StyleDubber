@@ -3,8 +3,8 @@ This package contains the accompanying code for the following paper:
 
 "StyleDubber: Towards Multi-Scale Style Learning for Movie Dubbing", which has appeared as long paper in the Findings of the ACL, 2024.
 
+![Fig1](https://github.com/user-attachments/assets/37cc9ef0-d24c-4eed-9935-78515069fd60)
 
-<img width="997" alt="image" src="https://github.com/user-attachments/assets/307dc27d-3fa4-4ade-9baa-bba026c32d8d">
 
 ## 📣 News
 
