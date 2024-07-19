@@ -3,8 +3,7 @@ This package contains the accompanying code for the following paper:
 
 "StyleDubber: Towards Multi-Scale Style Learning for Movie Dubbing", which has appeared as long paper in the Findings of the ACL, 2024.
 
-![Fig1](https://github.com/user-attachments/assets/37cc9ef0-d24c-4eed-9935-78515069fd60)
-
+![Illustration](./images/fig_intro_architecture.png)
 
 ## 📣 News
 
@@ -64,8 +63,7 @@ python train_StyleDubber_GRID.py
 ## ⭕ Inference 
 
 
-<img width="1462" alt="image" src="https://github.com/user-attachments/assets/b40e24ba-23c7-4c67-977f-a489106d48fb">
-
+![Illustration](./images/fig_Experiment.png)
 
 ```bash
 python 0_evaluate_V2C_Setting1.py --restore_step 47000
