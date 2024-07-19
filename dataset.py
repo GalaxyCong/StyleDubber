@@ -92,7 +92,7 @@ class Dataset_denoise2_V2Cdataset(Dataset):
         elif self.dataset_name == "MovieAnimation":
             lip_embedding_path = os.path.join(
                 self.preprocessed_path,
-                "extrated_embedding_V2C_gray_New2",
+                "extrated_embedding_V2C_gray",
                 "{}-face-{}.npy".format(speaker, basename),
             )
             lip_embedding = np.load(lip_embedding_path)
@@ -445,7 +445,7 @@ class Dataset_GRIDdataset(Dataset):
         elif self.dataset_name == "MovieAnimation":
             lip_embedding_path = os.path.join(
                 self.preprocessed_path,
-                "extrated_embedding_V2C_gray_New2",
+                "extrated_embedding_V2C_gray",
                 "{}-face-{}.npy".format(speaker, basename),
             )
             lip_embedding = np.load(lip_embedding_path)
@@ -755,7 +755,7 @@ class Dataset_GRIDdataset_Setting1(Dataset):
         elif self.dataset_name == "MovieAnimation":
             lip_embedding_path = os.path.join(
                 self.preprocessed_path,
-                "extrated_embedding_V2C_gray_New2",
+                "extrated_embedding_V2C_gray",
                 "{}-face-{}.npy".format(speaker, basename),
             )
             lip_embedding = np.load(lip_embedding_path)
@@ -1040,7 +1040,7 @@ class Dataset_GRIDdataset_Setting2(Dataset):
         elif self.dataset_name == "MovieAnimation":
             lip_embedding_path = os.path.join(
                 self.preprocessed_path,
-                "extrated_embedding_V2C_gray_New2",
+                "extrated_embedding_V2C_gray",
                 "{}-face-{}.npy".format(speaker, basename),
             )
             lip_embedding = np.load(lip_embedding_path)
@@ -1357,7 +1357,7 @@ class Dataset_denoise2(Dataset):
         elif self.dataset_name == "MovieAnimation":
             lip_embedding_path = os.path.join(
                 self.preprocessed_path,
-                "extrated_embedding_V2C_gray_New2",
+                "extrated_embedding_V2C_gray",
                 "{}-face-{}.npy".format(speaker, basename),
             )
             lip_embedding = np.load(lip_embedding_path)
@@ -1666,7 +1666,7 @@ class Dataset_denoise2_Setting1_Run(Dataset):
         elif self.dataset_name == "MovieAnimation":
             lip_embedding_path = os.path.join(
                 self.preprocessed_path,
-                "extrated_embedding_V2C_gray_New2",
+                "extrated_embedding_V2C_gray",
                 "{}-face-{}.npy".format(speaker, basename),
             )
             lip_embedding = np.load(lip_embedding_path)
@@ -1997,11 +1997,11 @@ class Dataset_denoise2_Setting3(Dataset):
                 "{}-face-{}.npy".format(speaker, basename),
             )
             lip_embedding = np.load(lip_embedding_path)
-        # extrated_embedding_V2C_gray_New2
+        # extrated_embedding_V2C_gray
         elif self.dataset_name == "MovieAnimation":
             lip_embedding_path = os.path.join(
                 self.preprocessed_path,
-                "extrated_embedding_V2C_gray_New2",
+                "extrated_embedding_V2C_gray",
                 "{}-face-{}.npy".format(speaker, basename),
             )
             lip_embedding = np.load(lip_embedding_path)
