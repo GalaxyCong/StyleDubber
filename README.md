@@ -14,6 +14,7 @@ This package contains the accompanying code for the following paper:
 - [x] Release StyleDubber's training and inference code.
 - [x] Release pretrained weights.
 - [x] Release the raw data and preprocessed data features of the GRID dataset.
+- [x] Metrics Testing Scripts (SECS, WER_Whisper). 
 - [ ] Update README.md (How to use). 
 - [ ] Release the preprocessed data features of the V2C-Animation dataset (chenqi-Denoise2).
 
