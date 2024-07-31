@@ -15,7 +15,7 @@ This package contains the accompanying code for the following paper:
 - [x] Release pretrained weights.
 - [x] Release the raw data and preprocessed data features of the GRID dataset.
 - [x] Metrics Testing Scripts (SECS, WER_Whisper).
-- [x] Release [StyleDubber‘s Demo Pages](https://acl2024x.github.io/StyleDubber/).
+- [x] Release [Demo Pages](https://acl2024x.github.io/StyleDubber/).
 - [ ] Update README.md (How to use). 
 - [ ] Release the preprocessed data features of the V2C-Animation dataset (chenqi-Denoise2).
 
