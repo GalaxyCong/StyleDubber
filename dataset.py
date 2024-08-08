@@ -74,7 +74,12 @@ class Dataset_denoise2_V2Cdataset(Dataset):
             "{}-duration-{}.npy".format(speaker, basename),
         )
         duration = np.load(duration_path)
-
+        
+        phone = phone[:min(len(phone),len(duration))]
+        duration = duration[:min(len(phone),len(duration))]
+        energy = energy[:min(len(phone),len(duration))]
+        pitch = pitch[:min(len(phone),len(duration))]
+        
         if self.inference_mode:
             basename_ref = self.basename_ref[idx]
             text_ref = self.text_ref[idx]
@@ -98,7 +103,7 @@ class Dataset_denoise2_V2Cdataset(Dataset):
             lip_embedding = np.load(lip_embedding_path)
             face_embedding_path = os.path.join(
                 self.preprocessed_path,
-                "VA_feature_face_all_equal",
+                "VA_feature",
                 "{}-feature-{}.npy".format(speaker, basename),
             )
             face_embedding = np.load(face_embedding_path)
@@ -118,10 +123,7 @@ class Dataset_denoise2_V2Cdataset(Dataset):
                 "{}-face-{}.npy".format(speaker, basename.split(speaker+'-')[-1]),
             )
             lip_embedding = np.load(lip_embedding_path)
-        phone = phone[:min(len(phone),len(duration))]
-        duration = duration[:min(len(phone),len(duration))]
-        energy = energy[:min(len(phone),len(duration))]
-        pitch = pitch[:min(len(phone),len(duration))]
+        
         if mel.shape[0] > sum(duration):
             mel = mel[:sum(duration), :]
         if self.dataset_name == "MovieAnimation":
@@ -451,7 +453,7 @@ class Dataset_GRIDdataset(Dataset):
             lip_embedding = np.load(lip_embedding_path)
             face_embedding_path = os.path.join(
                 self.preprocessed_path,
-                "VA_feature_face_all_equal",
+                "VA_feature",
                 "{}-feature-{}.npy".format(speaker, basename),
             )
             face_embedding = np.load(face_embedding_path)
@@ -761,7 +763,7 @@ class Dataset_GRIDdataset_Setting1(Dataset):
             lip_embedding = np.load(lip_embedding_path)
             face_embedding_path = os.path.join(
                 self.preprocessed_path,
-                "VA_feature_face_all_equal",
+                "VA_feature",
                 "{}-feature-{}.npy".format(speaker, basename),
             )
             face_embedding = np.load(face_embedding_path)
@@ -1048,7 +1050,7 @@ class Dataset_GRIDdataset_Setting2(Dataset):
             #
             face_embedding_path = os.path.join(
                 self.preprocessed_path,
-                "VA_feature_face_all_equal",
+                "VA_feature",
                 "{}-feature-{}.npy".format(speaker, basename),
             )
             face_embedding = np.load(face_embedding_path)
@@ -1363,7 +1365,7 @@ class Dataset_denoise2(Dataset):
             lip_embedding = np.load(lip_embedding_path)
             face_embedding_path = os.path.join(
                 self.preprocessed_path,
-                "VA_feature_face_all_equal",
+                "VA_feature",
                 "{}-feature-{}.npy".format(speaker, basename),
             )
             face_embedding = np.load(face_embedding_path)
@@ -1672,7 +1674,7 @@ class Dataset_denoise2_Setting1_Run(Dataset):
             lip_embedding = np.load(lip_embedding_path)
             face_embedding_path = os.path.join(
                 self.preprocessed_path,
-                "VA_feature_face_all_equal",
+                "VA_feature",
                 "{}-feature-{}.npy".format(speaker, basename),
             )
             face_embedding = np.load(face_embedding_path)
@@ -2009,7 +2011,7 @@ class Dataset_denoise2_Setting3(Dataset):
             #
             face_embedding_path = os.path.join(
                 self.preprocessed_path,
-                "VA_feature_face_all_equal",
+                "VA_feature",
                 "{}-feature-{}.npy".format(speaker, basename),
             )
             face_embedding = np.load(face_embedding_path)
