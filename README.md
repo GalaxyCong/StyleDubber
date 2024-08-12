@@ -23,6 +23,47 @@ This package contains the accompanying code for the following paper:
 ## 📊 Dataset
 
 - GRID ([BaiduDrive](https://pan.baidu.com/s/1E4cPbDvw_Zfk3_F8qoM7JA) (code: GRID) / GoogleDrive)
+
+```
+├── Lip_Grid_Gray
+                          
+    │       └── [GRID's Lip Region Images in Gray-scale] 
+
+├── Lip_Grid_Color
+                          
+    │       └── [GRID's Lip Region Images in RGB] 
+
+├── Grid_resample_ABS
+                          
+    │       └── [22050 Hz Audio Files in .wav] (The original data of GRID is 25K Hz)
+    
+├── Grid_lip_Feature
+                          
+    │       └── [Lip Feature extracted from ```Lip_Grid_Gray``` via Lipreading_using_Temporal_Convolutional_Networks] 
+
+├── Grid_Face_Image
+                          
+    │       └── [GRID's Face Region Images] 
+
+├── Grid_dataset_Raw
+                          
+    │       └── [GRID's raw data from Website] 
+
+├── Grad_eachframe
+                          
+    │       └── [Each frame files of Grid dataset] 
+
+├── Gird_FaceVAFeature
+                          
+    │       └── [Face Feature extracted from ```Grid_Face_Image``` via EmoFAN] 
+
+├── 0_Grid_Wav_22050_Abs_Feature
+                          
+            └── [Contains all the features needed to train the GRID dataset] 
+```
+
+**Note**: If you just want to train ```StyleDubber```, you only need to download ```0_Grid_Wav_22050_Abs_Feature``` (Preprocessed data features) and ```Grid_resample_ABS``` (Waveform used for testing). If you're going to plot and display, use it for other tasks (lip reading, ASV, etc.), or re-preprocess features on your way, you can download other files you need 😊. 
+
 - V2C-Animation dataset (chenqi-Denoise2) 
   
 
