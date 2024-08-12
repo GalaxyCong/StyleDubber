@@ -88,7 +88,7 @@ Other visual images (e.g., face and lip regions) in intermediate processes can b
 Quick Q&A: HPMDubbing also has pre-processed features. Are they the same？ Can I download it to train StyleDubber?
 
 No, you need to re-download.  HPMDubbing needs frame frame-level feature with 220 hop length and 880 window length for the desired upsampling manner. 
-StyleDubber currently only supports phoneme-level features and we adjust the hop length (256) and window length (1024) during pre-processing. 
+```StyleDubber``` currently only supports phoneme-level features and we adjust the hop length (256) and window length (1024) during pre-processing. 
 
 
 ## 💡 Checkpoints
