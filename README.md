@@ -35,7 +35,7 @@ This package contains the accompanying code for the following paper:
 
 ├── Grid_resample_ABS
                           
-    │       └── [22050 Hz Audio Files in .wav] (The original data of GRID is 25K Hz)
+    │       └── [22050 Hz Ground Truth Audio Files in .wav] (The original data of GRID is 25K Hz)
     
 ├── Grid_lip_Feature
                           
