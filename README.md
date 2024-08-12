@@ -62,7 +62,7 @@ This package contains the accompanying code for the following paper:
             └── [Contains all the features needed to train the GRID dataset] 
 ```
 
-**Note**: If you just want to train ```StyleDubber```, you only need to download ```0_Grid_Wav_22050_Abs_Feature``` (Preprocessed data features) and ```Grid_resample_ABS``` (Waveform used for testing). If you're going to plot and display, use it for other tasks (lip reading, ASV, etc.), or re-preprocess features on your way, you can download other files you need 😊. 
+**Note**: If you just want to train ```StyleDubber```, you only need to download the files in ```0_Grid_Wav_22050_Abs_Feature``` (Preprocessed data features) and ```Grid_resample_ABS``` (Waveform used for testing). If you're going to plot and display, use it for other tasks (lip reading, ASV, etc.), or re-preprocess features on your way, you can download other files you need 😊. 
 
 - V2C-Animation dataset (chenqi-Denoise2) 
   
