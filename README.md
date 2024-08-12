@@ -63,7 +63,7 @@ This package contains the accompanying code for the following paper:
             └── [Contains all the data features for train and inference in the GRID dataset]  
 ```
 
-**Note**: If you just want to train ```StyleDubber``` on the GRID dataset, you only need to download the files in ```0_Grid_Wav_22050_Abs_Feature``` (Preprocessed data features) and ```Grid_resample_ABS``` (Waveform used for testing). If you're going to plot and display, use it for other tasks (lip reading, ASV, etc.), or re-preprocess features on your way, you can download other files you need 😊. 
+**Note**: If you just want to train ```StyleDubber``` on the GRID dataset, you only need to download the files in ```0_Grid_Wav_22050_Abs_Feature``` (Preprocessed data features) and ```Grid_resample_ABS``` (Ground truth waveform used for testing). If you're going to plot and display, use it for other tasks (lip reading, ASV, etc.), or re-preprocess features on your way, you can download other files you need 😊. 
 
 
 
@@ -82,12 +82,12 @@ This package contains the accompanying code for the following paper:
 ```
 
 
-**Note**: For training on V2C-Animation, you need to download the files in ```Phoneme_level_Feature``` and ```GT_Wav```. 
+**Note**: For training on V2C-Animation, you need to download the files in ```Phoneme_level_Feature``` (Preprocessed data features) and ```GT_Wav``` (Ground truth waveform used for testing). 
 Other visual images (e.g., face and lip regions) in intermediate processes can be accessed at HPMDubbing. 
 
-Quick Q&A: HPMDubbing also has pre-processed features. Are they the same？ Can I download it to train StyleDubber?
+Quick Q&A: HPMDubbing also has pre-processed features. Are they the same？ Can I use it to train StyleDubber?
 
-No, you need to re-download.  HPMDubbing needs frame frame-level feature with 220 hop length and 880 window length for the desired upsampling manner. 
+No, you need to re-download to train StyleDubber.  HPMDubbing needs frame frame-level feature with 220 hop length and 880 window length for the desired upsampling manner. 
 ```StyleDubber``` currently only supports phoneme-level features and we adjust the hop length (256) and window length (1024) during pre-processing. 
 
 
