@@ -127,22 +127,104 @@ Training GRID dataset (33 real-world speakers), please run:
 python train_StyleDubber_GRID.py
 ```
 
-## ⭕ Inference 
 
+## ⭕ Inference Wav
+
+There are three kinds of dubbing settings in this paper. The first setting is the same as in [V2C-Net (Chen et al., 2022a)](https://openaccess.thecvf.com/content/CVPR2022/papers/Chen_V2C_Visual_Voice_Cloning_CVPR_2022_paper.pdf), which uses target audio as reference audio from test set. However, this is impractical in real-world applications. Thus, we design two new and more reasonable settings: “Dub 2.0” uses non-ground truth audio of the same speaker as reference audio; “Dub 3.0” uses the audio of unseen characters (from another dataset) as reference audio.
 
 ![Illustration](./images/fig_Experiment.png)
 
-```bash
-python 0_evaluate_V2C_Setting1.py --restore_step 47000
-```
+Inference Setting1: V2C & GRID
 
 ```bash
-python 0_evaluate_V2C_Setting2.py --restore_step 47000
+python 0_evaluate_V2C_Setting1.py --restore_step <checkpoint_step>
+```
+ or 
+
+ ```bash
+python 0_evaluate_GRID_Setting1.py --restore_step <checkpoint_step>
 ```
 
+Inference Setting2: V2C
 ```bash
-python 0_evaluate_V2C_Setting3.py --restore_step 47000
+python 0_evaluate_V2C_Setting2.py --restore_step <checkpoint_step>
 ```
+
+
+Inference Setting3: V2C
+```bash
+python 0_evaluate_V2C_Setting3.py --restore_step <checkpoint_step>
+```
+
+## 🤖️ Output Result
+
+
+- 👉 Word Error Rate (WER)
+
+    Please download pre-trained model of [whisper-large-v3](https://huggingface.co/openai/whisper-large-v3) (Calculating V2C-Animation dataset) and [whisper-base](https://huggingface.co/openai/whisper-base) (Calculating GRID dataset), and ```pip install jiwer```. 
+
+    ![Illustration](./images/WER.jpg) 
+
+    **For Setting1 and Setting2:** Please run:
+
+    ```bash
+    python Dub_Metric/WER_Whisper/Setting_test.py  -p <Generated_wav_path> -t <GT_Wav_Path>
+    ```
+    **Note**: If you need test GRID dataset, please replace ```model = whisper.load_model("large-v3")``` to ```model = whisper.load_model("base")``` (see line 102 in ```./Dub_Metric/WER_Whisper/Setting_test.py```). 
+
+
+    **For Setting3 (only for V2C):** Please run:
+
+    ```bash
+    python Dub_Metric/WER_Whisper/Setting3_test.py  -p <Generated_wav_path> -t <GT_Wav_Path>
+    ```
+
+    ❓ Quick Q&A: Why does V2C use whisper-large-v3, while GRID uses whisper-base? 
+
+    Considering the challenges of the ```V2C-Animation dataset```, the reviewer of ACL ARR suggested using whisper_large to enhance convincing. Through comparison, we finally choose ```whisper-large-v3``` as the WER testing benchmark. 
+    Considering the inference speed and memory, the GRID dataset still retains the “Whisper-base” as the test benchmark to calculate WER (22%), which is similar to the [VDTTS (Hassid et al., 2022)](https://arxiv.org/pdf/2111.10139) result (26%) in Table 2 (GRID evaluation), so this is sufficient to ensure a fair comparison. 
+    ![Illustration](./images/Whisper.jpg) 
+     
+
+- 👉 SPK-SIM / SECS (Speaker Encoder Cosine Similarity)
+
+    Please download [```wav2mel.pt``` and ```dvector.pt```](https://drive.google.com/drive/folders/1-DJR9lNwz5L7Bx0cBd4qLtpZ6onS7CKn?usp=drive_link) and save in ```./ckpts```
+
+
+    **For Setting1:** Please run:
+
+    ```bash
+    python Dub_Metric/SECS/Setting1.py  -p <Generated_wav_path> -t <GT_Wav_Path>
+    ```
+
+    **For Setting2:** Please run:
+
+    ```bash
+    python Dub_Metric/SECS/Setting2_V2C.py  -p <Generated_wav_path> -t <GT_Wav_Path>
+    ```
+
+    or:
+
+    ```bash
+    python Dub_Metric/SECS/Setting2_GRID.py  -p <Generated_wav_path> -t <GT_Wav_Path>
+    ```
+
+    **For Setting3 (only for V2C):** Please run: 
+
+    ```bash
+    python Dub_Metric/SECS/Setting3.py  -p <Generated_wav_path> -t <GT_Wav_Path>
+    ```
+
+- 👉 MCD-DTW and MCD-DTW-SL
+
+    The MCD-DTW and MCD-DTW-SL is calculate by running 0_evaluate_V2C_Setting*.py and 0_evaluate_GRID_Setting*.py, see ```⭕ Inference Wav.``` 
+
+
+
+- 👉 Sim-O & Sim-R by WavLM-TDNN --> To be continued
+- 👉 EMO-ACC -->  To be continued
+
+
 
 ## ✏️ Citing
 
