@@ -1,5 +1,5 @@
 import os
-# os.environ["CUDA_VISIBLE_DEVICES"] = '6'
+os.environ["CUDA_VISIBLE_DEVICES"] = '6'
 
 
 import whisper
@@ -98,7 +98,8 @@ if __name__ == '__main__':
     wav_list = os.listdir(pred_path)
     print("len_name:", len(wav_list))
     
-    model = whisper.load_model("large-v3")
+    model = whisper.load_model("large-v3") # V2C
+    # model = whisper.load_model("base") # GRID
 
     results_P = []
     for i in tqdm(wav_list):
