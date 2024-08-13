@@ -217,7 +217,7 @@ python 0_evaluate_V2C_Setting3.py --restore_step <checkpoint_step>
 
 - 👉 MCD-DTW and MCD-DTW-SL
 
-    The MCD-DTW and MCD-DTW-SL is calculate by running 0_evaluate_V2C_Setting*.py and 0_evaluate_GRID_Setting*.py, see ```⭕ Inference Wav.``` 
+    The MCD-DTW and MCD-DTW-SL are calculated by running 0_evaluate_V2C_Setting*.py and 0_evaluate_GRID_Setting*.py, see ```⭕ Inference Wav.``` 
 
 
 
