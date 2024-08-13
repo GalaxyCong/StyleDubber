@@ -1,5 +1,5 @@
 import os
-os.environ["CUDA_VISIBLE_DEVICES"] = '4'
+os.environ["CUDA_VISIBLE_DEVICES"] = '6'
 import json
 import ast
 import argparse
@@ -17,15 +17,14 @@ from scipy.io.wavfile import write
 
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
-def Test_more_MCD_with_GT(i, audio_path, mcd_toolbox, mcd_toolbox_dtw, mcd_toolbox_dtw_sl):
+def Test_more_MCD_with_GT(i, audio_path, mcd_toolbox_dtw, mcd_toolbox_dtw_sl):
     name_i = i.split("/")[-1].split("_pred_")[-1].split(".wav")[0]
     base_name = name_i.split("-")[0]
     target_wav = os.path.join(audio_path, base_name, "{}.wav".format(name_i))
     Predict_wav = i
-    plain_value = mcd_toolbox.calculate_mcd(Predict_wav, target_wav)
     dtw_value = mcd_toolbox_dtw.calculate_mcd(Predict_wav, target_wav)
     dtw_value_sl = mcd_toolbox_dtw_sl.calculate_mcd(Predict_wav, target_wav)
-    return plain_value, dtw_value, dtw_value_sl
+    return dtw_value, dtw_value_sl
 
 def synth_multi_samples_predonly(ids, Post_Mel, mel_len_preout, vocoder, model_config, preprocess_config):
     wav_reconstructions = []
@@ -117,18 +116,15 @@ if __name__ == "__main__":
     print("============MCD=================")
     audio_path = "/data/conggaoxiang/GRID/GRID_dataset/Grid_Wav_22050_Abs"
     generated_path = os.path.join(val_samples_path, "*")
-    mcd_toolbox = Calculate_MCD(MCD_mode="plain")
     mcd_toolbox_dtw = Calculate_MCD(MCD_mode="dtw")
     mcd_toolbox_dtw_sl = Calculate_MCD(MCD_mode="dtw_sl")
     all = glob.glob(generated_path)
     print("test all:", len(all))
     results = Parallel(n_jobs=49, verbose=1)(
-        delayed(Test_more_MCD_with_GT)(i, audio_path, mcd_toolbox, mcd_toolbox_dtw, mcd_toolbox_dtw_sl) for i in all
+        delayed(Test_more_MCD_with_GT)(i, audio_path, mcd_toolbox_dtw, mcd_toolbox_dtw_sl) for i in all
     )
-    avg_mcd_plain = sum(result[0] for result in results)/len(all)
-    avg_mcd_dtw = sum(result[1] for result in results)/len(all)
-    dtw_value_sl = sum(result[2] for result in results)/len(all)
-    print("MCD:", avg_mcd_plain)
+    avg_mcd_dtw = sum(result[0] for result in results)/len(all)
+    dtw_value_sl = sum(result[1] for result in results)/len(all)
     print("MCD_DTW:", avg_mcd_dtw)
     print("MCD_DTW_SL:", dtw_value_sl)
     print("Who's Restore_step ...", train_config["path"]["file"])
