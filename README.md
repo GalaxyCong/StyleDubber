@@ -17,7 +17,7 @@ This package contains the accompanying code for the following paper:
 - [x] Metrics Testing Scripts (SECS, WER_Whisper).
 - [x] Release [Demo Pages](https://acl2024x.github.io/StyleDubber/).
 - [x] Release the preprocessed data features of the V2C-Animation dataset.
-- [ ] Update README.md (How to use). 
+- [x] Update README.md. 
 
 
 
@@ -221,8 +221,11 @@ python 0_evaluate_V2C_Setting3.py --restore_step <checkpoint_step>
 
 
 
-- 👉 Sim-O & Sim-R by WavLM-TDNN --> To be continued
-- 👉 EMO-ACC -->  To be continued
+- 👉 Sim-O & Sim-R by WavLM-TDNN
+
+
+  
+- 👉 EMO-ACC
 
 
 
