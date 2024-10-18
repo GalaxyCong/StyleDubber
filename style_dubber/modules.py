@@ -42,44 +42,44 @@ class VarianceAdaptor_softplus1(nn.Module):
         n_bins = model_config["variance_embedding"]["n_bins"]
         assert pitch_quantization in ["linear", "log"]
         assert energy_quantization in ["linear", "log"]
-        with open(
-            os.path.join(preprocess_config["path"]["preprocessed_path"], "stats.json")
-        ) as f:
-            stats = json.load(f)
-            pitch_min, pitch_max = stats["pitch"][:2]
-            energy_min, energy_max = stats["energy"][:2]
+        # with open(
+        #     os.path.join(preprocess_config["path"]["preprocessed_path"], "stats.json")
+        # ) as f:
+        #     stats = json.load(f)
+        #     pitch_min, pitch_max = stats["pitch"][:2]
+        #     energy_min, energy_max = stats["energy"][:2]
 
-        if pitch_quantization == "log":
-            self.pitch_bins = nn.Parameter(
-                torch.exp(
-                    torch.linspace(np.log(pitch_min), np.log(pitch_max), n_bins - 1)
-                ),
-                requires_grad=False,
-            )
-        else:
-            self.pitch_bins = nn.Parameter(
-                torch.linspace(pitch_min, pitch_max, n_bins - 1),
-                requires_grad=False,
-            )
-        if energy_quantization == "log":
-            self.energy_bins = nn.Parameter(
-                torch.exp(
-                    torch.linspace(np.log(energy_min), np.log(energy_max), n_bins - 1)
-                ),
-                requires_grad=False,
-            )
-        else:
-            self.energy_bins = nn.Parameter(
-                torch.linspace(energy_min, energy_max, n_bins - 1),
-                requires_grad=False,
-            )
+        # if pitch_quantization == "log":
+        #     self.pitch_bins = nn.Parameter(
+        #         torch.exp(
+        #             torch.linspace(np.log(pitch_min), np.log(pitch_max), n_bins - 1)
+        #         ),
+        #         requires_grad=False,
+        #     )
+        # else:
+        #     self.pitch_bins = nn.Parameter(
+        #         torch.linspace(pitch_min, pitch_max, n_bins - 1),
+        #         requires_grad=False,
+        #     )
+        # if energy_quantization == "log":
+        #     self.energy_bins = nn.Parameter(
+        #         torch.exp(
+        #             torch.linspace(np.log(energy_min), np.log(energy_max), n_bins - 1)
+        #         ),
+        #         requires_grad=False,
+        #     )
+        # else:
+        #     self.energy_bins = nn.Parameter(
+        #         torch.linspace(energy_min, energy_max, n_bins - 1),
+        #         requires_grad=False,
+        #     )
 
-        self.pitch_embedding = nn.Embedding(
-            n_bins, model_config["transformer"]["encoder_hidden"]
-        )
-        self.energy_embedding = nn.Embedding(
-            n_bins, model_config["transformer"]["encoder_hidden"]
-        )
+        # self.pitch_embedding = nn.Embedding(
+        #     n_bins, model_config["transformer"]["encoder_hidden"]
+        # )
+        # self.energy_embedding = nn.Embedding(
+        #     n_bins, model_config["transformer"]["encoder_hidden"]
+        # )
 
     def get_pitch_embedding(self, x, target, mask, control):
         prediction = self.pitch_predictor(x, mask)
