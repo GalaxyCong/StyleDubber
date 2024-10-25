@@ -1,7 +1,7 @@
 # StyleDubber
 This package contains the accompanying code for the following paper:
 
-"StyleDubber: Towards Multi-Scale Style Learning for Movie Dubbing", which has appeared as long paper in the Findings of the ACL, 2024.
+"[StyleDubber: Towards Multi-Scale Style Learning for Movie Dubbing](https://aclanthology.org/2024.findings-acl.404/)", which has appeared as long paper in the Findings of the ACL, 2024.
 
 ![Illustration](./images/fig_intro_architecture.png)
 
@@ -35,7 +35,7 @@ This package contains the accompanying code for the following paper:
                           
     │       └── [GRID's Lip Region Images in RGB] 
 
-├── Grid_resample_ABS （GoogleDrive）
+├── Grid_resample_ABS （GoogleDrive ✅）
                           
     │       └── [22050 Hz Ground Truth Audio Files in .wav] (The original data of GRID is 25K Hz)
     
@@ -59,7 +59,7 @@ This package contains the accompanying code for the following paper:
                           
     │       └── [Face Feature extracted from ```Grid_Face_Image``` via EmoFAN] 
 
-├── 0_Grid_Wav_22050_Abs_Feature （GoogleDrive）
+├── 0_Grid_Wav_22050_Abs_Feature （GoogleDrive ✅）
                           
             └── [Contains all the data features for train and inference in the GRID dataset]  
 ```
@@ -73,11 +73,11 @@ This package contains the accompanying code for the following paper:
 
 
 ```
-├── Phoneme_level_Feature （GoogleDrive）
+├── Phoneme_level_Feature （GoogleDrive ✅）
                   
     │       └── [Contains all the data features for train and inference in the V2C-Animation dataset] 
 
-├── GT_Wav （GoogleDrive）
+├── GT_Wav （GoogleDrive ✅）
                   
             └── [22050 Hz ground truth Audio Files in .wav] 
 ```
@@ -234,11 +234,21 @@ python 0_evaluate_V2C_Setting3.py --restore_step <checkpoint_step>
 
 If you find our work useful, please consider citing:
 ```BibTeX
-@article{cong2024styledubber,
-  title={StyleDubber: Towards Multi-Scale Style Learning for Movie Dubbing},
-  author={Cong, Gaoxiang and Qi, Yuankai and Li, Liang and Beheshti, Amin and Zhang, Zhedong and Hengel, Anton van den and Yang, Ming-Hsuan and Yan, Chenggang and Huang, Qingming},
-  journal={arXiv preprint arXiv:2402.12636},
-  year={2024}
+@inproceedings{cong-etal-2024-styledubber,
+    title = "{S}tyle{D}ubber: Towards Multi-Scale Style Learning for Movie Dubbing",
+    author = "Cong, Gaoxiang  and
+      Qi, Yuankai  and
+      Li, Liang  and
+      Beheshti, Amin  and
+      Zhang, Zhedong  and
+      Hengel, Anton  and
+      Yang, Ming-Hsuan  and
+      Yan, Chenggang  and
+      Huang, Qingming",
+    booktitle = "Findings of the Association for Computational Linguistics ACL 2024",
+    month = aug,
+    year = "2024",
+    pages = "6767--6779",
 }
 ```
 
