@@ -17,13 +17,14 @@ This package contains the accompanying code for the following paper:
 - [x] Metrics Testing Scripts (SECS, WER_Whisper).
 - [x] Release [Demo Pages](https://acl2024x.github.io/StyleDubber/).
 - [x] Release the preprocessed data features of the V2C-Animation dataset.
-- [x] Update README.md. 
+- [x] Update README.md.
+- [x] Upload the dataset to Google Drive.
 
 
 
 ## 📊 Dataset
 
-- GRID ([BaiduDrive](https://pan.baidu.com/s/1E4cPbDvw_Zfk3_F8qoM7JA) (code: GRID) / GoogleDrive)
+- GRID [BaiduDrive](https://pan.baidu.com/s/1E4cPbDvw_Zfk3_F8qoM7JA) (code: GRID) / [GoogleDrive](https://drive.google.com/drive/folders/1_z51hy6H3K4kyHy-MXtMfo2Py6edpscE?usp=drive_link)
 
 ```
 ├── Lip_Grid_Gray
@@ -34,7 +35,7 @@ This package contains the accompanying code for the following paper:
                           
     │       └── [GRID's Lip Region Images in RGB] 
 
-├── Grid_resample_ABS
+├── Grid_resample_ABS （GoogleDrive）
                           
     │       └── [22050 Hz Ground Truth Audio Files in .wav] (The original data of GRID is 25K Hz)
     
@@ -54,11 +55,11 @@ This package contains the accompanying code for the following paper:
                           
     │       └── [Each frame files of Grid dataset] 
 
-├── Gird_FaceVAFeature
+├── Gird_FaceVAFeature 
                           
     │       └── [Face Feature extracted from ```Grid_Face_Image``` via EmoFAN] 
 
-├── 0_Grid_Wav_22050_Abs_Feature
+├── 0_Grid_Wav_22050_Abs_Feature （GoogleDrive）
                           
             └── [Contains all the data features for train and inference in the GRID dataset]  
 ```
@@ -68,15 +69,15 @@ This package contains the accompanying code for the following paper:
 
 
 
-- V2C-Animation dataset (chenqi-Denoise2) ([BaiduDrive]( https://pan.baidu.com/s/12hEFbXwpv4JscG3tUffjbA) (code: k9mb) / GoogleDrive)
+- V2C-Animation dataset (chenqi-Denoise2) [BaiduDrive]( https://pan.baidu.com/s/12hEFbXwpv4JscG3tUffjbA) (code: k9mb) / [GoogleDrive](https://drive.google.com/drive/folders/11WhRulJd23XzeuWmUVay5carpudGq3ig?usp=drive_link)
 
 
 ```
-├── Phoneme_level_Feature
+├── Phoneme_level_Feature （GoogleDrive）
                   
     │       └── [Contains all the data features for train and inference in the V2C-Animation dataset] 
 
-├── GT_Wav
+├── GT_Wav （GoogleDrive）
                   
             └── [22050 Hz ground truth Audio Files in .wav] 
 ```
